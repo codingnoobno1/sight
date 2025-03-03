@@ -10,153 +10,133 @@
       font-family: 'Inter', sans-serif;
       margin: 0;
       padding: 0;
-      background: #f5f5f5;
-      background: linear-gradient(to right, rgba(5, 13, 93, 0.363),  rgb(0, 0, 0));
+      background: linear-gradient(to right, rgba(5, 13, 93, 0.363), black);
+      overflow: hidden;
     }
-  
+    
     header {
-      background: linear-gradient(to right, black, red, rgb(0, 0, 0));
+      background: linear-gradient(to right, black, red, black);
       color: white;
       text-align: center;
       padding: 20px;
       font-size: 24px;
       font-weight: bold;
       text-shadow: 0px 0px 10px red;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
     }
-
-
+    
+    .container {
+      height: 100vh;
+      overflow-y: scroll;
+      scroll-snap-type: y mandatory;
+    }
     .section {
-      padding: 40px;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      scroll-snap-align: start;
       text-align: center;
+    }
+    .projects, .developers {
+      display: flex;
+      gap: 20px;
+      padding: 20px;
     }
     .projects {
-      display: flex;
       overflow-x: auto;
-      gap: 20px;
-      padding: 20px;
       white-space: nowrap;
     }
-    .card {
+    .card, .developer-card {
       min-width: 300px;
+      height: 200px;
       background: white;
       padding: 20px;
       border-radius: 10px;
       box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
-      display: inline-block;
       text-align: center;
-
-      heigh:200px
-      width:50px
     }
-    .developers {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
+    .follow button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background: red;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: background 0.3s;
     }
-    .developer-card {
-      background: white;
-      padding: 20px;
-      width: 200px;
-      border-radius: 10px;
-      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    .follow button:hover {
+      background: darkred;
     }
     footer {
       background: black;
       color: white;
       text-align: center;
       padding: 20px;
-      margin-top: 40px;
     }
   </style>
 </head>
 <body>
   <header>
     TEAM LAZY PIXEL(28)
-
-
-    
   </header>
   
-  <div class="section">
-    <h2>member </h2>
-    <div class="developers">
-      <div class="developer-card">tushar</div>
-      <div class="developer-card">rasleen</div>
-    
+  <div class="container">
+    <div class="section">
+      <h2>Members</h2>
+      <div class="developers">
+        <div class="developer-card">Tushar</div>
+        <div class="developer-card">Rasleen</div>
+      </div>
     </div>
-
-  </div>
-
-
-  <div class="section">
-    <h2>web devolopment </h2>
-    <div class="projects">
-      <div class="card">html </div>
-      <div class="card">csss</div>
-      <div class="card">js </div>
-      <div class="card">react</div>
+    
+    <div class="section">
+      <h2>Web Development</h2>
+      <div class="projects">
+        <div class="card">HTML</div>
+        <div class="card">CSS</div>
+        <div class="card">JavaScript</div>
+        <div class="card">React</div>
+      </div>
+    </div>
+    
+    <div class="section">
+      <h2>Projects</h2>
+      <div class="projects">
+        <div class="card">Project 1</div>
+        <div class="card">Project 2</div>
+        <div class="card">Project 3</div>
+        <div class="card">Project 9</div>
+      </div>
+    </div>
+    
+    <div class="section">
+      <h2>Follow Us</h2>
+      <div class="follow">
+        <button id="followButton" onclick="toggleFollow()">Click Me</button>
+      </div>
     </div>
   </div>
   
-
-
-  <div class="section">
-    <h2>projects</h2>
-    <div class="projects">
-      <div class="card">Projec1</div>
-      <div class="card">Project 2</div>
-      <div class="card">Project 3</div>
-
-
-      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      
-
-
-
-
-
-
-     
-      <div class="card">Project 9</div>
-    </div>
-    <!-- grid of9*9 project cards with expanding effect with details -->
-  </div>
-
-  <div class="section">
-    <h2>follow us</h2>
-    <div class="follow">
-    <button  on click text = click me 
-    >follow us </button> 
-
-    </div>
   <footer>
     &copy; 2025 All rights reserved by Team Lazy Pixel
   </footer>
+  
+  <script>
+    function toggleFollow() {
+      const button = document.getElementById('followButton');
+      if (button.innerText === "Click Me") {
+        button.innerText = "Follow Me";
+      } else {
+        button.innerText = "Click Me";
+      }
+    }
+  </script>
 </body>
 </html>
-
-
-
-
-
-
-
